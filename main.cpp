@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main()
+void arare()
 {
     int N;
     cin >> N;
@@ -22,8 +22,45 @@ int main()
             continue;
         }
     }
-    if (isIncY)
-        cout << "Four" << endl;
-    else
-        cout << "Three" << endl;
+    string dst = isIncY ? "Four" : "Three";
+    cout << dst << endl;
+}
+
+void theater()
+{
+    int N;
+    cin >> N;
+
+    int count = 0;
+    for (int i = 0; i < N; ++i)
+    {
+        int l, r;
+        cin >> l >> r;
+        count += 1 + r - l;
+    }
+    cout << count << endl;
+}
+
+void sep9()
+{
+    string N;
+    cin >> N;
+    bool flag = false;
+    for (int i = 0; i < N.length(); ++i)
+    {
+        if (N[i] == '9')
+        {
+            flag = true;
+            break;
+        }
+    }
+    string dst = flag ? "Yes" : "No";
+    cout << dst << endl;
+}
+
+int main()
+{
+    // arare();
+    // theater();
+    sep9();
 }
