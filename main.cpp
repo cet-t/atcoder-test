@@ -58,9 +58,66 @@ void sep9()
     cout << dst << endl;
 }
 
+void wande()
+{
+    int N;
+    cin >> N;
+
+    set<int> stock;
+    for (int i = 0; i < N; ++i)
+    {
+        int A;
+        cin >> A;
+        if (i != 0)
+        {
+            if (stock.count(A))
+            {
+                stock.erase(A);
+                continue;
+            }
+        }
+        stock.insert(A);
+    }
+    cout << "count: " << stock.size() << endl;
+}
+
+void ex17()
+{
+    int N, S;
+    cin >> N >> S;
+    vector<int> A(N), P(N);
+    for (int i = 0; i < N; i++)
+    {
+        cin >> A.at(i);
+    }
+    for (int i = 0; i < N; i++)
+    {
+        cin >> P.at(i);
+    }
+
+    // リンゴ・パイナップルをそれぞれ1つずつ購入するとき合計S円になるような買い方が何通りあるか
+    // ここにプログラムを追記
+    int pattern = 0;
+    for (auto a : A)
+    {
+        for (auto p : P)
+        {
+            if (a + p == S)
+            {
+                ++pattern;
+            }
+        }
+    }
+    cout << pattern << endl;
+}
+
 int main()
 {
     // arare();
     // theater();
-    sep9();
+    // sep9();
+    // wande();
+    // ex17();
+
+    return 0;
 }
